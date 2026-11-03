@@ -108,22 +108,11 @@ Optional IPv6:
 
 After DNS has propagated, in **Settings → Pages** turn on **Enforce HTTPS**. Certificate provisioning can take a while after the domain starts resolving to GitHub.
 
-## Activate the quote forms
+## Quote forms
 
-Every quote form posts to [Formspree](https://formspree.io). Nothing is delivered until the placeholder id is replaced. Submitting before that shows the existing message: “Oops! Something went wrong while submitting the form.”
+Every quote form posts to Formspree at `https://formspree.io/f/mljjarwg`. The browser sends it with `fetch` (`POST`, `Accept: application/json`) and shows the existing success or error message. A hidden `_gotcha` field is included, and `_subject` is `New quote request - movingservicedublin.com`.
 
-1. Create a free Formspree account and a new form.
-2. Set the notification email to the address that should receive quotes.
-3. Copy the form id. It is the last part of the endpoint, for example `https://formspree.io/f/abcdwxyz` → `abcdwxyz`.
-4. Open `assets/js/form-config.js` and replace `YOUR_FORM_ID`:
-
-```js
-window.MSD_FORM_ENDPOINT = "https://formspree.io/f/abcdwxyz";
-```
-
-5. Commit that change to `main`. Pages will redeploy. Submit a test quote and confirm the email arrives.
-
-The form fields are Your name, Phone number, Moving from, Moving to, Preferred date, and What needs moving. Placeholders are unchanged. Field names were given distinct values (`name`, `phone`, `moving_from`, `moving_to`, `preferred_date`, `details`) so the email is readable. On the live site every input was named `field`, so a submission could not tell them apart.
+Field names: `name`, `email`, `phone`, `moving_from`, `moving_to`, `preferred_date`, `details`, plus `_subject` and `_gotcha`. `email` is what Formspree uses as the reply-to address. The email box was added for that; the other placeholders are unchanged.
 
 WhatsApp links (`https://wa.me/353873931146`) are unchanged. There were no `mailto:` links on the live site. Every visible `087 393 1146` is now a tap-to-call link to `tel:+353873931146`. The digits on the page are unchanged, and the link is styled to keep the surrounding text colour and weight.
 

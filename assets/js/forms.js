@@ -25,7 +25,7 @@
     hide(done);
     hide(fail);
     var url = endpoint();
-    if (!url || url.indexOf("YOUR_FORM_ID") !== -1) {
+    if (!url) {
       show(fail);
       return;
     }
