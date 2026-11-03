@@ -10628,3 +10628,16 @@ textarea.w-input, textarea.w-select {
   opacity: 0;
   pointer-events: none;
 }
+/* Tap-to-call keeps the published colour and weight, including inside .lp-body. */
+a[href^="tel:"],
+a[href^="tel:"]:hover,
+a[href^="tel:"]:focus,
+a[href^="tel:"]:visited,
+.lp-body a[href^="tel:"],
+.lp-body a[href^="tel:"]:hover,
+.lp-body a[href^="tel:"]:focus,
+.lp-body a[href^="tel:"]:visited {
+  color: inherit !important;
+  text-decoration: none !important;
+  font-weight: inherit !important;
+}
