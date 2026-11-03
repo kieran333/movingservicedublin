@@ -1,0 +1,1 @@
+(function(){var d=document;var s=d.getElementById('km-modern');if(!s){s=d.createElement('style');s.id='km-modern';d.head.appendChild(s);}s.appendChild(d.createTextNode('.art-cta,.art-cta h1,.art-cta h2,.art-cta h3,.art-cta h4,.art-cta p,.art-cta a,.art-cta a *{color:#fff!important}'));})();

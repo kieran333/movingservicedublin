@@ -1,0 +1,1 @@
+(function(){try{var s=document.createElement('style');s.setAttribute('data-km','hide-old-title');s.textContent='.art-wrap h1{display:none !important;}';(document.head||document.documentElement).appendChild(s);}catch(e){}})();
